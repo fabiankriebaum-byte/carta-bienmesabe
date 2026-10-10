@@ -1,11 +1,11 @@
-# Paso 1: Usar una imagen oficial de Java para compilar
-FROM maven:3.8.8-openjdk-17 AS build
+# Paso 1: Usar una imagen oficial de Eclipse Temurin y Maven para compilar
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Paso 2: Usar una imagen ligera de Java para ejecutar la app
-FROM openjdk:17-jdk-slim
+# Paso 2: Usar la imagen oficial ligera de Eclipse Temurin para ejecutar la app
+FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
