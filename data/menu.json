@@ -1,0 +1,546 @@
+[ {
+  "nombre" : "Snacks",
+  "sub" : null,
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Maní",
+    "descripcion" : null,
+    "foto" : "/img/snacks/mani.jpg",
+    "precio" : null
+  }, {
+    "nombre" : "Papas snack",
+    "descripcion" : null,
+    "foto" : "/img/snacks/papasf.jpg",
+    "precio" : null
+  }, {
+    "nombre" : "Palito salado",
+    "descripcion" : null,
+    "foto" : "/img/snacks/palitosal.jpg",
+    "precio" : 3000
+  } ]
+}, {
+  "nombre" : "Pizzas",
+  "sub" : null,
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Muzarella",
+    "descripcion" : "Salsa, orégano, muzarella",
+    "foto" : "/img/pizza/pizza-muza.jpg",
+    "precio" : 12000
+  }, {
+    "nombre" : "Fugazzeta",
+    "descripcion" : "Muzarella, orégano, cebolla",
+    "foto" : "/img/pizza/pizza-fuga.jpg",
+    "precio" : 13000
+  }, {
+    "nombre" : "Sardinas",
+    "descripcion" : "Salsa, sardina, muzarella, cebolla, tomate",
+    "foto" : "/img/pizza/pizza-sardi.jpg",
+    "precio" : 15000
+  }, {
+    "nombre" : "Napolitana",
+    "descripcion" : "Salsa, rodajas de tomate, ajo picado, muzarella",
+    "foto" : null,
+    "precio" : 15000
+  }, {
+    "nombre" : "Muzarella y jamón",
+    "descripcion" : "Salsa, muzarella, jamón",
+    "foto" : null,
+    "precio" : 15000
+  }, {
+    "nombre" : "Jamón y morrón",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 16000
+  }, {
+    "nombre" : "Roquefort",
+    "descripcion" : "Salsa, muzarella, roquefort, aceitunas",
+    "foto" : null,
+    "precio" : 15000
+  }, {
+    "nombre" : "Choclo",
+    "descripcion" : "Salsa, muzarella, choclo, morrón",
+    "foto" : null,
+    "precio" : 15000
+  }, {
+    "nombre" : "Especial",
+    "descripcion" : "Jamón cocido, huevo, morrón, muzarella, salsa",
+    "foto" : null,
+    "precio" : 16000
+  }, {
+    "nombre" : "Champignon",
+    "descripcion" : "Salsa, muzarella",
+    "foto" : null,
+    "precio" : 17000
+  }, {
+    "nombre" : "Calabresa",
+    "descripcion" : "Salsa, longaniza, muzarella",
+    "foto" : null,
+    "precio" : 16000
+  }, {
+    "nombre" : "Caprichosa",
+    "descripcion" : "Salsa, muzarella, jamón cocido, salamín, champignon, morrones, ají picante",
+    "foto" : null,
+    "precio" : 19000
+  }, {
+    "nombre" : "Palmitos",
+    "descripcion" : "Salsa, muzarella, morrones, palmitos con salsa golf",
+    "foto" : null,
+    "precio" : 18000
+  }, {
+    "nombre" : "Atún",
+    "descripcion" : "Salsa, muzarella, atún, tomates, cebolla",
+    "foto" : null,
+    "precio" : 17000
+  }, {
+    "nombre" : "Panceta ahumada",
+    "descripcion" : "Salsa, muzarella, panceta ahumada",
+    "foto" : null,
+    "precio" : 17000
+  }, {
+    "nombre" : "Bienmesabe",
+    "descripcion" : "Salsa, muzarella, rodajas de tomate, jamón, huevo duro, morrón, pollo con salsa golf",
+    "foto" : null,
+    "precio" : 19000
+  }, {
+    "nombre" : "Tropical",
+    "descripcion" : "Ananá, jamón, morrón",
+    "foto" : null,
+    "precio" : 17000
+  }, {
+    "nombre" : "Jamón crudo",
+    "descripcion" : "Salsa, muzarella, jamón crudo",
+    "foto" : null,
+    "precio" : 17000
+  }, {
+    "nombre" : "Jamón crudo y rúcula",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 18000
+  }, {
+    "nombre" : "Anchoas",
+    "descripcion" : "Salsa, anchoas, muzarella",
+    "foto" : null,
+    "precio" : 17000
+  } ]
+}, {
+  "nombre" : "Empanadas",
+  "sub" : "$1.500 cada una · Docena $18.000",
+  "consultar" : false,
+  "items" : [ {
+    "nombre" : "Caprese",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Jamón y queso",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Carne",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Pollo",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Choclo",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Cebolla y queso",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "4 quesos",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  } ]
+}, {
+  "nombre" : "Sándwiches",
+  "sub" : "Salen con papas",
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Sándwich de milanesa",
+    "descripcion" : "Con lechuga y tomate",
+    "foto" : null,
+    "precio" : 12000
+  }, {
+    "nombre" : "Sándwich de milanesa especial",
+    "descripcion" : "Con huevo, jamón, queso, verduras",
+    "foto" : null,
+    "precio" : 13000
+  }, {
+    "nombre" : "Triple de jamón y queso",
+    "descripcion" : "Frío o tostado",
+    "foto" : null,
+    "precio" : 8000
+  }, {
+    "nombre" : "Triple verdura",
+    "descripcion" : "Jamón, queso, lechuga, tomate, huevo",
+    "foto" : null,
+    "precio" : 11000
+  }, {
+    "nombre" : "Triple tostado de pollo y verdura",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 13000
+  }, {
+    "nombre" : "Triple jamón crudo",
+    "descripcion" : "Frío o tostado",
+    "foto" : null,
+    "precio" : 9000
+  }, {
+    "nombre" : "Triple jamón crudo y tomate",
+    "descripcion" : "Frío o tostado",
+    "foto" : null,
+    "precio" : 10000
+  }, {
+    "nombre" : "Alito carne o pollo",
+    "descripcion" : "Jamón, queso, panceta, huevo, cebolla, lechuga, tomate, queso gratinado",
+    "foto" : null,
+    "precio" : 26000
+  }, {
+    "nombre" : "Alito chico",
+    "descripcion" : "Jamón, queso, panceta, huevo, cebolla, lechuga, tomate, queso gratinado",
+    "foto" : null,
+    "precio" : 15000
+  } ]
+}, {
+  "nombre" : "Papas",
+  "sub" : null,
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Papas fritas por porción",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 5500
+  }, {
+    "nombre" : "Papas fritas provenzal",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 6000
+  }, {
+    "nombre" : "Papas fritas gratinadas",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 6500
+  }, {
+    "nombre" : "Papas fritas con cheddar y panceta",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 7000
+  } ]
+}, {
+  "nombre" : "Hamburguesas",
+  "sub" : "Todas con papas fritas",
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Junior",
+    "descripcion" : "1 carne solo con queso",
+    "foto" : null,
+    "precio" : 7000
+  }, {
+    "nombre" : "Simple",
+    "descripcion" : "2 carnes, queso, jamón",
+    "foto" : null,
+    "precio" : 9000
+  }, {
+    "nombre" : "Completa",
+    "descripcion" : "2 carnes, verdura, queso, jamón",
+    "foto" : null,
+    "precio" : 10000
+  }, {
+    "nombre" : "Especial con huevo",
+    "descripcion" : "2 carnes, queso, jamón, lechuga y tomate",
+    "foto" : null,
+    "precio" : 11000
+  }, {
+    "nombre" : "Americana",
+    "descripcion" : "Panceta ahumada, lechuga, tomate, cebolla, cheddar",
+    "foto" : null,
+    "precio" : 12000
+  }, {
+    "nombre" : "Bienmesabe",
+    "descripcion" : "2 carnes, panceta, huevo, queso, jamón, verdura, cebolla",
+    "foto" : null,
+    "precio" : 12000
+  }, {
+    "nombre" : "Premium",
+    "descripcion" : "Triple carne, bondiola, cheddar",
+    "foto" : null,
+    "precio" : 13000
+  }, {
+    "nombre" : "Texana",
+    "descripcion" : "Triple carne, panceta, huevo, barbacoa",
+    "foto" : null,
+    "precio" : 13000
+  }, {
+    "nombre" : "King",
+    "descripcion" : "Triple carne, jamón, queso, huevo, lechuga, tomate",
+    "foto" : null,
+    "precio" : 13000
+  } ]
+}, {
+  "nombre" : "Lomitos",
+  "sub" : null,
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Lomito simple",
+    "descripcion" : "Carne o pollo, queso, jamón",
+    "foto" : null,
+    "precio" : 11000
+  }, {
+    "nombre" : "Lomito completo",
+    "descripcion" : "Carne o pollo, queso, jamón, tomate, lechuga",
+    "foto" : null,
+    "precio" : 12000
+  }, {
+    "nombre" : "Lomito especial",
+    "descripcion" : "Carne o pollo, tomate, queso, jamón, huevo, lechuga",
+    "foto" : null,
+    "precio" : 13000
+  }, {
+    "nombre" : "Lomito Bienmesabe",
+    "descripcion" : "Carne o pollo, verdura, panceta, queso, jamón, cebolla, huevo",
+    "foto" : null,
+    "precio" : 15000
+  }, {
+    "nombre" : "Lomito al plato",
+    "descripcion" : "Con papas fritas, ensalada, huevos, queso, jamón",
+    "foto" : null,
+    "precio" : 17000
+  } ]
+}, {
+  "nombre" : "Milanesas",
+  "sub" : null,
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Milanesa con fritas y huevo",
+    "descripcion" : "O ensalada o puré",
+    "foto" : null,
+    "precio" : 15000
+  }, {
+    "nombre" : "Milanesa de pollo con fritas y huevo",
+    "descripcion" : "O ensalada o puré",
+    "foto" : null,
+    "precio" : 15000
+  }, {
+    "nombre" : "Milanesa napolitana",
+    "descripcion" : "Con fritas, ensalada o puré",
+    "foto" : null,
+    "precio" : 16000
+  } ]
+}, {
+  "nombre" : "Picadas",
+  "sub" : null,
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Picada simple",
+    "descripcion" : "Sándwich, aceitunas, queso, jamón, salamín, milanesa, papas fritas",
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Picada grande",
+    "descripcion" : "Sándwich, aceitunas, queso, jamón, salamín, milanesa, papas fritas",
+    "foto" : null,
+    "precio" : null
+  } ]
+}, {
+  "nombre" : "Cervezas",
+  "sub" : null,
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Quilmes lata / Brahma",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 3000
+  }, {
+    "nombre" : "Quilmes boca ancha 500 cc",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Cerveza negra Stout-Boock 330 cc",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Corona 355 cc",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 5000
+  }, {
+    "nombre" : "Cerveza Brahma / Quilmes 2/3",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Cerveza Brahma / Quilmes 1 litro",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 6000
+  }, {
+    "nombre" : "Cerveza negra Stout-Boock 1 litro",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 7500
+  }, {
+    "nombre" : "Stella Artois 710 cc",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 9000
+  }, {
+    "nombre" : "Corona / Patagonia 710 cc",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 8000
+  } ]
+}, {
+  "nombre" : "Gaseosas y sodas",
+  "sub" : null,
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Soda agua 500 cc",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 2000
+  }, {
+    "nombre" : "Saborizados 500 cc",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 2500
+  }, {
+    "nombre" : "Pepsi lata",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 2500
+  }, {
+    "nombre" : "Saborizados 1½ litro",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 3500
+  }, {
+    "nombre" : "Gaseosa 500 cc",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 3000
+  }, {
+    "nombre" : "Pepsi descartable / 7up / Mirinda 1½ litro",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 5000
+  }, {
+    "nombre" : "Paso de los Toros",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : 5000
+  } ]
+}, {
+  "nombre" : "Café",
+  "sub" : null,
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Café",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Café expreso",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  } ]
+}, {
+  "nombre" : "Vinos",
+  "sub" : null,
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Santa Isabel Borgoña",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Canciller Malbec",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Estancia Mendoza Cabernet",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Valmont",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Latitud 33°",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  } ]
+}, {
+  "nombre" : "Tragos",
+  "sub" : null,
+  "consultar" : true,
+  "items" : [ {
+    "nombre" : "Speed",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Fernet",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Gancia",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Whisky",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Pronto Shake",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Dr. Lemon",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Vodka con speed o jugo",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Gin tonic",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Daikiri",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  }, {
+    "nombre" : "Aperol Spritz",
+    "descripcion" : null,
+    "foto" : null,
+    "precio" : null
+  } ]
+} ]

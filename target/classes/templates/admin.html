@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel · Carta</title>
+  <style>
+    body{font-family:system-ui,sans-serif;background:#f6f7f4;color:#232a33;margin:0;padding:12px;max-width:900px;margin:auto}
+    h1{font-size:1.3rem} h2{margin:0 0 8px;font-size:1.1rem}
+    .cat{background:#fff;border:1px solid #dfe3da;border-radius:10px;padding:12px;margin:14px 0}
+    form{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
+    input[type=text],input[type=number]{padding:7px;border:1px solid #bbb;border-radius:6px;font:inherit}
+    .aviso-mensaje{flex:1 1 100%;min-height:72px;padding:7px;border:1px solid #bbb;border-radius:6px;font:inherit;resize:vertical}
+    .n{flex:2 1 160px}.d{flex:3 1 200px}.p{width:100px}.f{flex:2 1 150px}
+    button{padding:7px 12px;border:0;border-radius:6px;background:#6f9a2e;color:#fff;font:inherit;cursor:pointer}
+    button.del{background:#c8312b}
+    .nuevo{border-top:1px dashed #bbb;padding-top:8px;margin-top:10px}
+    .ayuda{color:#6b7380;font-size:.85rem}
+    a{color:#232a33}
+  </style>
+</head>
+<body>
+  <h1>Panel de la carta · <a href="/" target="_blank">ver carta</a></h1>
+  <p class="ayuda">Precio vacío = "Consultar". Cada fila se guarda con su botón "Guardar".</p>
+
+  <div class="cat">
+    <h2>Aviso flotante del día</h2>
+    <p class="ayuda">Editá el texto o desmarcá la casilla para ocultarlo de la carta.</p>
+    <p class="ayuda" th:if="${param.avisoActualizado}" role="status">Aviso guardado.</p>
+    <form th:action="@{/admin/aviso}" method="post">
+      <label><input type="checkbox" name="activo" value="true" th:checked="${avisoActivo}"> Mostrar aviso</label>
+      <input class="n" type="text" name="etiqueta" th:value="${avisoEtiqueta}" placeholder="Rótulo (ej: Para hoy)" required>
+      <input class="n" type="text" name="textoBoton" th:value="${avisoTextoBoton}" placeholder="Texto del botón" required>
+      <input class="n" type="text" name="titulo" th:value="${avisoTitulo}" placeholder="Título del aviso" required>
+      <textarea class="aviso-mensaje" name="mensaje" rows="3" placeholder="Mensaje del aviso" required th:text="${avisoMensaje}"></textarea>
+      <button>Guardar aviso</button>
+    </form>
+  </div>
+
+  <div class="cat" th:each="c, s : ${categorias}" th:id="'c' + ${s.index}">
+    <form th:action="@{/admin/categoria/{c}/editar(c=${s.index})}" method="post">
+      <input class="n" type="text" name="nombre" th:value="${c.nombre}" required>
+      <input class="d" type="text" name="sub" th:value="${c.sub}" placeholder="Subtítulo (opcional)">
+      <label><input type="checkbox" name="consultar" value="true" th:checked="${c.consultar}"> "Consultar" sin precio</label>
+      <button>Guardar</button>
+      <button class="del" th:formaction="@{/admin/categoria/{c}/borrar(c=${s.index})}"
+              onclick="return confirm('¿Borrar la categoría y todos sus productos?')">Borrar categoría</button>
+    </form>
+
+    <form th:each="i, t : ${c.items}" th:action="@{/admin/categoria/{c}/item/{i}/editar(c=${s.index},i=${t.index})}" method="post">
+      <input class="n" type="text" name="nombre" th:value="${i.nombre}" required>
+      <input class="d" type="text" name="descripcion" th:value="${i.descripcion}" placeholder="Descripción">
+      <input class="p" type="number" name="precio" th:value="${i.precio}" placeholder="Precio" min="0">
+      <input class="f" type="text" name="foto" th:value="${i.foto}" placeholder="Foto: /img/archivo.jpg">
+      <button>Guardar</button>
+      <button class="del" th:formaction="@{/admin/categoria/{c}/item/{i}/borrar(c=${s.index},i=${t.index})}"
+              onclick="return confirm('¿Borrar este producto?')">Borrar</button>
+    </form>
+
+    <form class="nuevo" th:action="@{/admin/categoria/{c}/item/nuevo(c=${s.index})}" method="post">
+      <input class="n" type="text" name="nombre" placeholder="+ Nuevo producto" required>
+      <input class="d" type="text" name="descripcion" placeholder="Descripción">
+      <input class="p" type="number" name="precio" placeholder="Precio" min="0">
+      <input class="f" type="text" name="foto" placeholder="Foto (opcional)">
+      <button>Agregar</button>
+    </form>
+  </div>
+
+  <div class="cat">
+    <form th:action="@{/admin/categoria/nueva}" method="post">
+      <input class="n" type="text" name="nombre" placeholder="Nueva categoría (ej: Postres)" required>
+      <button>Crear categoría</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Listo, la carta quedó en Spring Boot con un panel para editarla. Pasé las 14 categorías y los 95 productos tal cual estaban, con el mismo diseño. No pude compilarla ni probarla porque acá no tengo Maven, así que si al arrancarla aparece algún error, pegámelo y lo arreglo.
+
+Para usarla necesitás Java 17 o más y Maven. Descomprimí el zip y ejecutá:
+
+mvn spring-boot:run
+Carta para los clientes: http://localhost:8080/
+Panel para editar: http://localhost:8080/admin. El usuario es admin y la contraseña inicial es cambiame; cambiala en application.properties.
+
+En el panel podés crear y borrar categorías, agregar, editar y borrar productos, y cambiar precios. Un precio vacío muestra "Consultar". Los cambios se guardan en el archivo data/menu.json, sin base de datos. Respaldá ese archivo de vez en cuando.
+
+El teléfono, el WhatsApp y la dirección también se cambian en application.properties. Las fotos van en la carpeta img/ (por ejemplo img/frente-local.jpg) y en el panel se escriben como /img/archivo.jpg.
+
+Para que los clientes la vean desde el celular, la app tiene que estar corriendo en un servidor con internet, no en tu compu. Después se le puede generar un código QR para poner en las mesas. Si querés, te explico cómo publicarla.

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title th:text="${nombre} + ' · Menú'">Menú</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+  <aside class="daily-notice" id="daily-notice" aria-labelledby="daily-notice-title" role="status" th:if="${avisoActivo}">
+    <div class="daily-notice-copy">
+      <p class="daily-notice-kicker" th:text="${avisoEtiqueta}">Para hoy</p>
+      <h2 id="daily-notice-title" th:text="${avisoTitulo}">Sugerencia del día</h2>
+      <p th:text="${avisoMensaje}">Consultá el menú propuesto para hoy y preguntanos por la oferta vigente.</p>
+      <a class="daily-notice-link" th:href="${waUrl}" target="_blank" rel="noopener" th:text="${avisoTextoBoton}">Consultar por WhatsApp</a>
+    </div>
+    <button class="daily-notice-close" type="button" aria-label="Cerrar aviso" data-close-notice>&times;</button>
+  </aside>
+
+  <header class="hero" th:style="|background-image:url('${fotoFrente}')|">
+    <div class="hero-text">
+      <h1 th:text="${nombre}">Bienmesabe</h1>
+      <p th:text="${direccion}"></p>
+    </div>
+  </header>
+
+  <nav class="cats" aria-label="Categorías">
+    <a th:each="c, s : ${categorias}" th:href="'#c' + ${s.index}" th:text="${c.nombre}"></a>
+  </nav>
+
+  <main>
+    <section th:each="c, s : ${categorias}" th:id="'c' + ${s.index}">
+      <h2 th:text="${c.nombre}"></h2>
+      <p class="sub" th:if="${c.sub}" th:text="${c.sub}"></p>
+      <div class="item" th:each="i : ${c.items}">
+        <img th:if="${i.foto}" th:src="${i.foto}" th:alt="${i.nombre}" loading="lazy">
+        <div class="info">
+          <div class="nombre" th:text="${i.nombre}"></div>
+          <div class="desc" th:if="${i.descripcion}" th:text="${i.descripcion}"></div>
+        </div>
+        <div class="precio" th:if="${i.precio != null}" th:text="'$' + ${#numbers.formatInteger(i.precio, 1, 'POINT')}"></div>
+        <div class="precio consultar" th:if="${i.precio == null and c.consultar}">Consultar</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Servicio a domicilio: <a th:href="'tel:' + ${telefono1}" th:text="${telefono1}"></a></p>
+    <p class="nota">Los precios pueden cambiar sin previo aviso.</p>
+    <p>Diseñado por QR Diseño&Print 
+      <a th:href="'tel:' + ${telefono2}" th:text="${telefono2}"></a></p>
+  </footer>
+
+  <a class="wa" th:href="${waUrl}" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+  <script th:src="@{/app.js}"></script>
+</body>
+</html>
