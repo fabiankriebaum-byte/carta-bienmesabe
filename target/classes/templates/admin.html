@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -9,9 +10,10 @@
     h1{font-size:1.3rem} h2{margin:0 0 8px;font-size:1.1rem}
     .cat{background:#fff;border:1px solid #dfe3da;border-radius:10px;padding:12px;margin:14px 0}
     form{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
-    input[type=text],input[type=number]{padding:7px;border:1px solid #bbb;border-radius:6px;font:inherit}
+    input[type=text],input[type=number],input[type=file]{padding:7px;border:1px solid #bbb;border-radius:6px;font:inherit;max-width:100%;box-sizing:border-box}
     .aviso-mensaje{flex:1 1 100%;min-height:72px;padding:7px;border:1px solid #bbb;border-radius:6px;font:inherit;resize:vertical}
     .n{flex:2 1 160px}.d{flex:3 1 200px}.p{width:100px}.f{flex:2 1 150px}
+    .foto-archivo{flex:1 1 220px;min-width:0}
     button{padding:7px 12px;border:0;border-radius:6px;background:#6f9a2e;color:#fff;font:inherit;cursor:pointer}
     button.del{background:#c8312b}
     .nuevo{border-top:1px dashed #bbb;padding-top:8px;margin-top:10px}
@@ -47,22 +49,30 @@
               onclick="return confirm('¿Borrar la categoría y todos sus productos?')">Borrar categoría</button>
     </form>
 
-    <form th:each="i, t : ${c.items}" th:action="@{/admin/categoria/{c}/item/{i}/editar(c=${s.index},i=${t.index})}" method="post">
+    <form th:each="i, t : ${c.items}"
+          th:action="@{/admin/categoria/{c}/item/{i}/editar(c=${s.index},i=${t.index})}"
+          method="post" enctype="multipart/form-data">
       <input class="n" type="text" name="nombre" th:value="${i.nombre}" required>
       <input class="d" type="text" name="descripcion" th:value="${i.descripcion}" placeholder="Descripción">
       <input class="p" type="number" name="precio" th:value="${i.precio}" placeholder="Precio" min="0">
-      <input class="f" type="text" name="foto" th:value="${i.foto}" placeholder="Foto: /img/archivo.jpg">
-      <button>Guardar</button>
-      <button class="del" th:formaction="@{/admin/categoria/{c}/item/{i}/borrar(c=${s.index},i=${t.index})}"
+      <input class="f" type="text" name="foto" th:value="${i.foto}" placeholder="Ruta de foto (opcional)">
+      <input class="foto-archivo" type="file" name="fotoArchivo" accept="image/jpeg,image/png,image/webp,image/gif">
+      <button type="submit">Guardar</button>
+      <button class="del" type="submit"
+              th:formaction="@{/admin/categoria/{c}/item/{i}/borrar(c=${s.index},i=${t.index})}"
+              formnovalidate
               onclick="return confirm('¿Borrar este producto?')">Borrar</button>
     </form>
 
-    <form class="nuevo" th:action="@{/admin/categoria/{c}/item/nuevo(c=${s.index})}" method="post">
+    <form class="nuevo"
+          th:action="@{/admin/categoria/{c}/item/nuevo(c=${s.index})}"
+          method="post" enctype="multipart/form-data">
       <input class="n" type="text" name="nombre" placeholder="+ Nuevo producto" required>
       <input class="d" type="text" name="descripcion" placeholder="Descripción">
       <input class="p" type="number" name="precio" placeholder="Precio" min="0">
-      <input class="f" type="text" name="foto" placeholder="Foto (opcional)">
-      <button>Agregar</button>
+      <input class="f" type="text" name="foto" placeholder="Ruta de foto (opcional)">
+      <input class="foto-archivo" type="file" name="fotoArchivo" accept="image/jpeg,image/png,image/webp,image/gif">
+      <button type="submit">Agregar</button>
     </form>
   </div>
 

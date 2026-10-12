@@ -130,7 +130,7 @@
   "items" : [ {
     "nombre" : "Caprese",
     "descripcion" : null,
-    "foto" : null,
+    "foto" : "/img/empa/empa-caprese.jpg",
     "precio" : null
   }, {
     "nombre" : "Jamón y queso",
@@ -150,12 +150,12 @@
   }, {
     "nombre" : "Choclo",
     "descripcion" : null,
-    "foto" : null,
+    "foto" : "/img/empa/empa-choclo.jpg",
     "precio" : null
   }, {
     "nombre" : "Cebolla y queso",
     "descripcion" : null,
-    "foto" : null,
+    "foto" : "/img/uploads/392553e2-d3d7-4252-a7ab-cef2e397f9fb.jpg",
     "precio" : null
   }, {
     "nombre" : "4 quesos",
