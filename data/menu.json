@@ -170,7 +170,7 @@
   "items" : [ {
     "nombre" : "Sándwich de milanesa",
     "descripcion" : "Con lechuga y tomate",
-    "foto" : null,
+    "foto" : "/img/uploads/35c45231-4d22-42d8-b96d-b88043c740ce.jpg",
     "precio" : 12000
   }, {
     "nombre" : "Sándwich de milanesa especial",
