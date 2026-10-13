@@ -52,7 +52,7 @@
       <a th:href="'tel:' + ${telefono2}" th:text="${telefono2}"></a></p>
   </footer>
 
-  <a class="wa" th:href="${waUrl}" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
-  <script th:src="@{/app.js}"></script>
+<a class="wa" th:if="${waBotonActivo}" th:href="${waUrl}"
+   target="_blank" rel="noopener">Escribinos por WhatsApp</a>  <script th:src="@{/app.js}"></script>
 </body>
 </html>

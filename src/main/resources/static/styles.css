@@ -11,7 +11,7 @@ body{font-family:'Nunito Sans',system-ui,sans-serif;background:var(--paper);colo
 .hero h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(2.4rem,9vw,3.8rem);line-height:1}
 .hero p{margin-top:8px;opacity:.9}
 
-.daily-notice{position:fixed;top:50%;left:50%;z-index:12;display:flex;gap:18px;align-items:flex-start;width:min(360px,calc(100vw - 32px));padding:18px;background:#fff;border:1px solid var(--line);border-top:4px solid var(--green);box-shadow:0 8px 26px rgba(20,24,30,.2);transform:translate(-50%,-50%);animation:notice-enter .35s ease-out both}
+.daily-notice{position:fixed;top:50%;left:50%;z-index:51;display:flex;gap:18px;align-items:flex-start;width:min(360px,calc(100vw - 32px));padding:18px;background:#fff;border:1px solid var(--line);border-top:4px solid var(--green);box-shadow:0 8px 26px rgba(20,24,30,.2);transform:translate(-50%,-50%);animation:notice-enter .35s ease-out both}
 .daily-notice[hidden]{display:none}
 .daily-notice-copy{min-width:0}
 .daily-notice-kicker{color:var(--green);font-size:.72rem;font-weight:700;text-transform:uppercase}
@@ -22,7 +22,7 @@ body{font-family:'Nunito Sans',system-ui,sans-serif;background:var(--paper);colo
 .daily-notice-close:hover{background:var(--paper);color:var(--ink)}
 @keyframes notice-enter{from{opacity:0;transform:translate(-50%,calc(-50% - 8px))}to{opacity:1;transform:translate(-50%,-50%)}}
 
-.cats{position:sticky;top:0;z-index:5;background:var(--slate);display:flex;gap:8px;overflow-x:auto;padding:10px 12px;scrollbar-width:none}
+.cats{position:sticky;top:0;z-index:50;background:var(--slate);display:flex;gap:8px;overflow-x:auto;padding:10px 12px;scrollbar-width:none}
 .cats::-webkit-scrollbar{display:none}
 .cats a{flex:none;color:#e9ecef;text-decoration:none;font-weight:600;font-size:.92rem;padding:7px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.25)}
 .cats a.on{background:var(--green);border-color:var(--green);color:#fff}
@@ -44,7 +44,7 @@ footer{max-width:760px;margin:36px auto 0;padding:0 16px;text-align:center;color
 footer a{color:var(--ink);font-weight:700}
 .nota{font-size:.8rem;margin-top:6px}
 
-.wa{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:#1fa855;color:#fff;font-weight:700;text-decoration:none;padding:13px 22px;border-radius:99px;box-shadow:0 4px 14px rgba(0,0,0,.25);white-space:nowrap;z-index:9}
+.wa{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:#1fa855;color:#fff;font-weight:700;text-decoration:none;padding:13px 22px;border-radius:99px;box-shadow:0 4px 14px rgba(0,0,0,.25);white-space:nowrap;z-index:1}
 
 .visor{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:20;padding:16px}
 .visor img{max-width:100%;max-height:90vh;border-radius:10px}

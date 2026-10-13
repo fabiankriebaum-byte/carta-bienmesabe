@@ -18,15 +18,21 @@ import org.springframework.web.multipart.MultipartFile;
 public class AdminController {
     private final MenuService svc;
     private final AvisoService avisos;
+    private final WhatsAppConfigService whatsappConfig;
 
-    public AdminController(MenuService svc, AvisoService avisos) {
-        this.svc = svc;
-        this.avisos = avisos;
-    }
+public AdminController(MenuService svc, AvisoService avisos,
+        WhatsAppConfigService whatsappConfig) {
+    this.svc = svc;
+    this.avisos = avisos;
+    this.whatsappConfig = whatsappConfig;
+}
 
     @GetMapping
     public String panel(Model m) {
         m.addAttribute("categorias", svc.getMenu());
+        WhatsAppConfigService.Config wa = whatsappConfig.get();
+m.addAttribute("waTelefono", wa.telefono());
+m.addAttribute("waBotonActivo", wa.botonActivo());
         AvisoService.Aviso aviso = avisos.get();
         m.addAttribute("avisoActivo", aviso.activo());
         m.addAttribute("avisoEtiqueta", aviso.etiqueta());
@@ -36,14 +42,15 @@ public class AdminController {
         return "admin";
     }
 
-    @PostMapping("/aviso")
-    public String guardarAviso(@RequestParam(defaultValue = "false") boolean activo,
-            @RequestParam String etiqueta, @RequestParam String textoBoton,
-            @RequestParam String titulo, @RequestParam String mensaje) {
-        avisos.guardar(activo, etiqueta.trim(), textoBoton.trim(),
-                titulo.trim(), mensaje.trim());
-        return "redirect:/admin?avisoActualizado";
-    }
+    @PostMapping("/whatsapp")
+public String guardarWhatsApp(
+        @RequestParam String telefono,
+        @RequestParam(defaultValue = "false") boolean botonActivo) {
+
+    whatsappConfig.guardar(telefono.trim(), botonActivo);
+    return "redirect:/admin?whatsappActualizado";
+}
+    
 
     @PostMapping("/categoria/nueva")
     public String nuevaCategoria(@RequestParam String nombre) {

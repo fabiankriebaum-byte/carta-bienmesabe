@@ -1,3 +1,4 @@
+
 package com.bienmesabe.carta;
 
 import java.net.URLEncoder;
@@ -11,17 +12,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PublicController {
     private final MenuService menu;
     private final AvisoService avisos;
+    private final WhatsAppConfigService whatsappConfig;
+
     @Value("${carta.nombre}") String nombre;
     @Value("${carta.direccion}") String direccion;
     @Value("${carta.telefono1}") String telefono1;
     @Value("${carta.telefono2}") String telefono2;
-    @Value("${carta.whatsapp}") String whatsapp;
     @Value("${carta.mensaje-whatsapp}") String mensaje;
     @Value("${carta.foto-frente}") String fotoFrente;
 
-    public PublicController(MenuService menu, AvisoService avisos) {
+    public PublicController(MenuService menu, AvisoService avisos,
+            WhatsAppConfigService whatsappConfig) {
         this.menu = menu;
         this.avisos = avisos;
+        this.whatsappConfig = whatsappConfig;
     }
 
     @GetMapping("/")
@@ -32,14 +36,20 @@ public class PublicController {
         m.addAttribute("telefono1", telefono1);
         m.addAttribute("telefono2", telefono2);
         m.addAttribute("fotoFrente", fotoFrente);
+
+        WhatsAppConfigService.Config wa = whatsappConfig.get();
+        m.addAttribute("waBotonActivo", wa.botonActivo());
+
         AvisoService.Aviso aviso = avisos.get();
         m.addAttribute("avisoActivo", aviso.activo());
         m.addAttribute("avisoEtiqueta", aviso.etiqueta());
         m.addAttribute("avisoTextoBoton", aviso.textoBoton());
         m.addAttribute("avisoTitulo", aviso.titulo());
         m.addAttribute("avisoMensaje", aviso.mensaje());
-        m.addAttribute("waUrl", "https://wa.me/" + whatsapp + "?text="
+
+        m.addAttribute("waUrl", "https://wa.me/" + wa.telefono() + "?text="
                 + URLEncoder.encode(mensaje, StandardCharsets.UTF_8));
+
         return "menu";
     }
 }

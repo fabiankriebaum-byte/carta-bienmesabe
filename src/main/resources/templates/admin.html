@@ -25,6 +25,29 @@
   <h1>Panel de la carta · <a href="/" target="_blank">ver carta</a></h1>
   <p class="ayuda">Precio vacío = "Consultar". Cada fila se guarda con su botón "Guardar".</p>
 
+  
+  <div class="cat">
+    <h2>Botón de WhatsApp</h2>
+    <p class="ayuda">Activá o desactivá el botón flotante y cambiá el número de contacto.</p>
+    <p class="ayuda" th:if="${param.whatsappActualizado}" role="status">Configuración de WhatsApp guardada.</p>
+
+    <form th:action="@{/admin/whatsapp}" method="post">
+      <label>
+        <input type="checkbox" name="botonActivo" value="true"
+               th:checked="${waBotonActivo}">
+        Mostrar botón de WhatsApp en la carta
+      </label>
+
+      <label for="waTelefono">Número con código de país, sin + ni espacios:</label>
+      <input id="waTelefono" type="text" name="telefono"
+             th:value="${waTelefono}"
+             placeholder="5493705102828"
+             pattern="[0-9]{8,15}" required>
+
+      <button type="submit">Guardar WhatsApp</button>
+    </form>
+  </div>
+
   <div class="cat">
     <h2>Aviso flotante del día</h2>
     <p class="ayuda">Editá el texto o desmarcá la casilla para ocultarlo de la carta.</p>

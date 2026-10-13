@@ -22,3 +22,11 @@ const obs = new IntersectionObserver(es => es.forEach(en => {
   }
 }), { rootMargin: "-20% 0px -70% 0px" });
 document.querySelectorAll("main section").forEach(s => obs.observe(s));
+
+
+const MOSTRAR_BOTON_WHATSAPP = true;
+
+document.querySelector('.wa')?.toggleAttribute(
+    'hidden',
+    !MOSTRAR_BOTON_WHATSAPP
+);
